@@ -1,43 +1,26 @@
-# 100 Days Of Code - Log
+### ----------Day [1] on Date (3/1/2017)----------
 
-### Day 0: February 30, 2016 (Example 1)
-##### (delete me or comment me out)
+* [Name] - Francesco Paolo
 
-**Today's Progress**: Fixed CSS, worked on canvas functionality for the app.
+* [Surname] - Dellaquila
 
-**Thoughts:** I really struggled with CSS, but, overall, I feel like I am slowly getting better at it. Canvas is still new for me, but I managed to figure out some basic functionality.
+* [Progress] - improve python skills
 
-**Link to work:** [Calculator App](http://www.example.com)
+* [Thought] - i'm making a stable version of prometheus tools for 100daysofcode 
 
-### Day 0: February 30, 2016 (Example 2)
-##### (delete me or comment me out)
-
-**Today's Progress**: Fixed CSS, worked on canvas functionality for the app.
-
-**Thoughts**: I really struggled with CSS, but, overall, I feel like I am slowly getting better at it. Canvas is still new for me, but I managed to figure out some basic functionality.
-
-**Link(s) to work**: [Calculator App](http://www.example.com)
+* [Link] - https://github.com/Francescopaolo44/Prometheus
 
 
-### Day 1: June 27, Monday
+### ----------Day [2] on Date (4/1/2017)----------
 
-**Today's Progress**: I've gone through many exercises on FreeCodeCamp.
+* [Name] - Francesco Paolo
 
-**Thoughts** I've recently started coding, and it's a great feeling when I finally solve an algorithm challenge after a lot of attempts and hours spent.
+* [Surname] - Dellaquila
 
-**Link(s) to work**
-1. [Find the Longest Word in a String](https://www.freecodecamp.com/challenges/find-the-longest-word-in-a-string)
-2. [Title Case a Sentence](https://www.freecodecamp.com/challenges/title-case-a-sentence)
-----------Day [1] on Date (3/1/2017)----------
+* [Progress] -  improve python skills
 
-Name: #
+* [Thought] -  update and improve prometheus tools
 
-Surname: #
-
-Progress : improve python skills
-
-Thought : i'm making a stable version of prometheus tools for 100daysofcode 
-
-Link : https://github.com/Francescopaolo44/Prometheus
+* [Link] -  https://github.com/francescopaolo44/prometheus
 
 

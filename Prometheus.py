@@ -2,11 +2,10 @@
 
 # module
 import sys
-from pip._vendor.distlib.compat import raw_input
 from datetime import datetime
 import os.path
-import json
 import os
+import json
 # ----------------------function----------------------
 
 # modify number of day in json
@@ -30,86 +29,63 @@ def data_json():
     with open("config.json", "r") as data_file:
         data = json.load(data_file)
         # open in (a) file with progress
-        with open("log.txt", "a") as prometheus_file:
+        with open("log.md", "a") as prometheus_file:
             # Date
             date = datetime.now()
             day = int(data["Day"])
             day += 1
             prometheus_file.write(
-                "----------Day " + "[" + data["Day"] + "]" + " on Date " + "(" + str(date.day) + "/" + str(
-                    date.month) + "/" + str(date.year) + ")" + "----------" + "\n")
-            prometheus_file.write("\n")
+                "### ----------Day " + "[" + data["Day"] + "]" + " on Date " + "(" + str(date.day) + "/" + str(
+                    date.month) + "/" + str(date.year) + ")" + "----------" + "\n\n")
 
             # call update_json_day
             update_json_day(day)
 
             # Name and Surname
-            prometheus_file.write("Name: " + data["Name"] + "\n")
-            prometheus_file.write("\n")
-            prometheus_file.write("Surname: " + data["Surname"] + "\n")
-            prometheus_file.write("\n")
+            prometheus_file.write(
+                "* [Name] - " + data["Name"] + "\n\n" + "* [Surname] - " + data["Surname"] + "\n\n")
 
         # close json
         data_file.close()
         #close file
         prometheus_file.close()
 
+#rewrite_check
+def rewrite():
+    check_response = False
+    while check_response == False:
+        response = input ("Rewrite Progress?(yes/no): ").lower()
+        if response == "yes" or response == "no":
+            if response == 'yes':
+                return False
+            else:
+                return True
+        else:
+            print("\n wrong action")
 
 # load data from user input
 def data_user():
     # open in (a) file with progress
-    with open("log.txt", "a") as prometheus_file:
+    with open("log.md", "a") as prometheus_file:
         # Progress
-        check_progress = False
-        while check_progress == False:
-            check_response = False
-            progress = input("Write your progress: ")
-            progress.lower()
-            while check_response == False:
-                response = input("Rewrite progress? (yes/no): ")
-                response.lower()
-                if response == "yes" or response == "no":
-                    check_response = True
-                else:
-                    print("wrong action")
-            if response == "no":
-                check_progress = True
-
+        check_response = False
+        while check_response == False:
+            progress = input("Write your progress: ").lower()
+            check_response = rewrite()
         # Thought
-        check_thought = False
-        while check_thought == False:
-            check_response = False
-            thought = input("Write your thought: ")
-            progress.lower()
-            while check_response == False:
-                response = input("Rewrite thought? (yes/no): ")
-                response.lower()
-                if response == "yes" or response == "no":
-                    check_response = True
-                else:
-                    print("wrong action")
-            if response == "no":
-                check_thought = True
-
+        check_response = False
+        while check_response == False:
+            thought = input("Write your thought: ").lower()
+            check_response = rewrite()
         # Link
-        check_link = False
-        while check_link == False:
-            check_response = False
-            link = input("Write your link: ")
-            progress.lower()
-            while check_response == False:
-                response = input("Rewrite link? (yes/no): ")
-                response.lower()
-                if response == "yes" or response == "no":
-                    check_response = True
-                else:
-                    print("wrong action")
-            if response == "no":
-                check_link = True
+        check_response = False
+        while check_response == False:
+            link = input("Write your link: ").lower()
+            check_response = rewrite()
 
-        # write from progress to link on file
+        # write from progress to link on file in markdown sintax
         prometheus_file.write(
-            "Progress :" + " " + progress + "\n\n" + "Thought :" + " " + thought + "\n\n" + "Link :" + " " + link + "\n\n\n")
+            "* [Progress] - " + " " + progress + "\n\n" + "* [Thought] - " + " " + thought + "\n\n" + "* [Link] - " + " " + link + "\n\n\n")
 
         # tweet
         print(
@@ -123,50 +99,36 @@ def data_user():
 
 def push():
     path = os.path.abspath('Prometheus')
-    commit = str(raw_input("\n\nInsert commit: "))
+    commit = str(input("\n\nInsert commit: "))
     os.system("cd/" + path)
     os.system("git add .")
     os.system("git commit -m" + "\"" + commit + "\"")
     os.system("git push")
 
-def md_to_txt():
-    prevName = "log.md"
-    nextName = "log.txt"
-    os.rename(prevName,nextName)
-
-def txt_to_md():
-    prevName = "log.txt"
-    nextName = "log.md"
-    os.rename(prevName,nextName)
-
 # add all progress to file
 def add():
 
     """format log's day:
-    |------------------------------------Day [N] on Date (current date)------------------------------------|
-    |
-    |Name and Username (user data)
-    |                                ------from json
-    |Progress (Current Progress)
-    |
-    |Thoughts (Thoughts)
-    |
-    |Links (Link to the project)
-    |
-    |                                 ------from user
-    """
+    *** ------------------------------------Day [N] on Date (current date)------------------------------------|
 
-    #convert md file to txt
-    md_to_txt()
+    * [Name] - (user data)
+
+    * [Surname] - (user data)
+                                      ------from json
+    * [Progress] - (Current Progress)
+
+    * [Thoughts] - (Thoughts)
+
+    * [Links] - (Link to the project)
+
+                                      ------from user
+    """
 
     # data from json
     data_json()
 
     # data from user
     data_user()
-
-    #convert txt file to md
-    txt_to_md()
 
     #push on repo
     push()
@@ -179,19 +141,16 @@ def read_a():
     if os.path.exists("log.md") == False:
         print("You haven't write yet")
     else:
-        #convert md file to txt
-        md_to_txt()
-
-        with open("log.txt", "r") as prometheus_file:
+        with open("log.md", "r") as prometheus_file:
             print(prometheus_file.read())
-
-        #convert txt file to md
-        txt_to_md()
 
 
 # read and print specific progress
 def help():
-    print ("\nadd: add progress to file and push on repo\n" + "\nread_a: read all file and print contens on screen\n")
+    print (
+        "\n     prometheus.py:                           open the complete interface of the tool\n" +
+        "\n     prometheus.py add:                       add progress to file and push on repo\n" +
+        "\n     prometheus.py read_a:                    read all file and print contens on screen\n")
 # menu function
 def menu(topic):
     if topic == "add":
@@ -205,7 +164,7 @@ def menu(topic):
 # ----------------------main----------------------
 if len(sys.argv) == 1:
 
-    print("Welcome to Prometheus: Python text editor\n")
+    print("\nWelcome to Prometheus: Python text editor\n")
 
     print("You can: \n"
           "- (Add) new thing\n"
@@ -219,7 +178,7 @@ if len(sys.argv) == 1:
         if topic == "add" or topic == "read_a" or topic == "help":
             check_topic = True
         else:
-            print("wrong action")
+            print("\nwrong action")
     # call menu
     menu(topic)
 else:
@@ -227,4 +186,4 @@ else:
         # call menu
         menu(sys.argv[1].lower())
     else:
-        print("command not found")
+        print("\ncommand not found")
