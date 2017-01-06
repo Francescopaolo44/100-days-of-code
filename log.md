@@ -24,3 +24,16 @@
 * [Link] -  https://github.com/francescopaolo44/prometheus
 
 
+### ----------Day [3] on Date (6/1/2017)----------
+
+* [Name] - Francesco Paolo
+
+* [Surname] - Dellaquila
+
+* [Progress] -  improve python skills
+
+* [Thought] -  i think that in this first period i learn and improve only my python skills, infact i have created another python project called athena music player.
+
+* [Link] -  https://github.com/francescopaolo44/athena-music-player
+
+
