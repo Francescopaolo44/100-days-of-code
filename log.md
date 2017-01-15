@@ -37,3 +37,16 @@
 * [Link] -  https://github.com/francescopaolo44/athena-music-player
 
 
+### ----------Day [3] on Date (15/1/2017)----------
+
+* [Name] - Francesco Paolo
+
+* [Surname] - Dellaquila
+
+* [Progress] -  learn how to package python project correctly
+
+* [Thought] -  prepare package is easy, and i think that upload on pypi too.
+
+* [Link] -  https://github.com/pugliasos/apollo
+
+
