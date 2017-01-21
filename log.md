@@ -37,7 +37,7 @@
 * [Link] -  https://github.com/francescopaolo44/athena-music-player
 
 
-### ----------Day [3] on Date (15/1/2017)----------
+### ----------Day [4] on Date (15/1/2017)----------
 
 * [Name] - Francesco Paolo
 
@@ -48,5 +48,18 @@
 * [Thought] -  prepare package is easy, and i think that upload on pypi too.
 
 * [Link] -  https://github.com/pugliasos/apollo
+
+
+### ----------Day [5] on Date (21/1/2017)----------
+
+* [Name] - Francesco Paolo
+
+* [Surname] - Dellaquila
+
+* [Progress] -  improve with java
+
+* [Thought] -  now, i can implement first time tutorial in app, with android studio in only 20 minutes. great!
+
+* [Link] -  https://github.com/francescopaolo44/medicalme
 
 
