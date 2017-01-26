@@ -63,3 +63,16 @@
 * [Link] -  https://github.com/francescopaolo44/medicalme
 
 
+### ----------Day [6] on Date (26/1/2017)----------
+
+* [Name] - Francesco Paolo
+
+* [Surname] - Dellaquila
+
+* [Progress] -  improve java skills
+
+* [Thought] -  i think that in a few day i complete my app
+
+* [Link] -  https://github.com/francescopaolo44/medicalme
+
+
